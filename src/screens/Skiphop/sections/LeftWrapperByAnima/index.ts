@@ -1,0 +1,1 @@
+export { LeftWrapperByAnima } from "./LeftWrapperByAnima";

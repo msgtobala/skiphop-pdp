@@ -1,0 +1,1 @@
+export { DesignAdaptsSection } from "./DesignAdaptsSection";
