@@ -40,10 +40,10 @@ export const ThreeDSection = (): JSX.Element => {
   ];
 
   const colorOptions = [
-    { id: 1, image: presets[0].image },
-    { id: 2, image: presets[1].image },
-    { id: 3, image: presets[2].image },
-    { id: 4, image: presets[2].image },
+    { id: 1, image: "/preset.png" },
+    { id: 2, image: "/preset-1.jpg" },
+    { id: 3, image: "/preset-2.jpg" },
+    { id: 4, image: "/preset-3.jpg" },
   ];
 
   const [selectedPreset, setSelectedPreset] = useState<Preset>(presets[0]);
