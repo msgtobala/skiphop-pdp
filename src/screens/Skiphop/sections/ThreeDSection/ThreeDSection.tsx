@@ -39,17 +39,17 @@ export const ThreeDSection = (): JSX.Element => {
     },
   ];
 
-  const colorOptions = [
-    { id: 1, image: "/preset.png" },
-    { id: 2, image: "/preset-1.jpg" },
-    { id: 3, image: "/preset-2.jpg" },
-    { id: 4, image: "/preset-3.jpg" },
-  ];
+  // const colorOptions = [
+  //   { id: 1, image: "/preset.png" },
+  //   { id: 2, image: "/preset-1.jpg" },
+  //   { id: 3, image: "/preset-2.jpg" },
+  //   { id: 4, image: "/preset-3.jpg" },
+  // ];
 
   const [selectedPreset, setSelectedPreset] = useState<Preset>(presets[0]);
-  const [selectedColor, setSelectedColor] = useState<ColorOption>(
-    colorOptions[0]
-  );
+  // const [selectedColor, setSelectedColor] = useState<ColorOption>(
+  //   colorOptions[0]
+  // );
 
   return (
     <section className="relative w-full h-screen bg-white">
@@ -133,7 +133,7 @@ export const ThreeDSection = (): JSX.Element => {
             ))}
           </div>
         </div>
-        <div>
+        {/* <div>
           <h3 className="text-lg font-medium mb-4 text-[#2e2e2e]">Colors</h3>
           <div className="flex gap-4">
             {colorOptions.map((option) => (
@@ -154,7 +154,7 @@ export const ThreeDSection = (): JSX.Element => {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
