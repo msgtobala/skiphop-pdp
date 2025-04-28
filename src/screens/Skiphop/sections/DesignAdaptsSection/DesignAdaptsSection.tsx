@@ -14,7 +14,7 @@ export const DesignAdaptsSection = (): JSX.Element => {
           playsInline
         >
           <source
-            src="https://s3-figma-videos-production-sig.figma.com/video/ORG/1252706866293636381/a0a3c7fa04752aba2cabdcb7d0a35788190757af?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=eUW3YB1Y48sK0BopwMwKighHdHQfvDYEDbx~gQzW3TlhZ9xM0Ib1-eTzElJ16bnsc7NBHY9o7r1QRFdkgPrKBtj9NwSWU3gdRacgbNKChieEG-JOXtjrnQC0B6qEuzWc7kp3hiNP12ve~555MwN2JtGk9d-t4g7SPJpmMDoiXWLshkvKCxqhLY4W3Z3lclN5IorbfcdorkUWlLlvDzNizHK5Y9yJOMkMb0YkFGi3UghYJSZzOEGLJ2Wh3Ihb0TbyQTjkGppJfV6V1qGZ7Ayt1loxp6B7Spa1H0AOzXkwTLUh-K3issQ6RYx1v3WMDcJBPd4Np~iiUKM9krdujG0upA__"
+            src="chair.mp4"
             type="video/mp4"
           />
         </video>

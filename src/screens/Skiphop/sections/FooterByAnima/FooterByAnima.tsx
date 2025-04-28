@@ -101,7 +101,7 @@ export const FooterByAnima = (): JSX.Element => {
             <img
               className="h-[150px] mt-[50px] object-contain [@media(width:1024px)]:relative [@media(width:1024px)]:left-[-10%]"
               alt="Footer background"
-              src="https://s3-alpha-sig.figma.com/img/bfe6/d62d/92d1c62890680783247fd3ae03b7f2ee?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=SeN0R1DNlH8-8SkXFIE-XlHdifEpzsH25~cDkfOFkEYGdnUTvwTPbt7gJ0004hcLQOXqDGoZKmOBB8ZVLxsV8rJF0cp7hDpzMeADW~OXtd5adhLlCXFC~y87uo0~KxkR5hDeNeogGfwk3xKVkkGo3CUdK9WHUv6TtfjYza8OZEYGODuuWTpItXlCZL-KB21m8Y~ZdxOARxTgZ6mAypBZ6o-4mQdmGXeor~WDz5HYpOAm2iocAmUrp6Y~pPUKdsE7G9eTSnzOdiK~kIBd1yBI~E8n7QCQJVD2YjqqW07aq13m723T6FsKLjPh4S4y6RqivSUZqdyY7J2sUCel5fYiNg__"
+              src="/skip-hop-logo-footer.png"
             />
           </div>
           <div className="absolute w-[95px] h-[87px] bottom-0 right-0 bg-[#ee2e24]" />

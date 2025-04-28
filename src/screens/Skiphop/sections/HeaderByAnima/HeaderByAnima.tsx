@@ -26,7 +26,7 @@ export const HeaderByAnima = (): JSX.Element => {
         {/* Logo */}
         <div className="flex-shrink-0">
           <img 
-            src="https://s3-alpha-sig.figma.com/img/2abe/045e/fc98edd3d5eb777392ce8d4fb13a3fac?Expires=1745798400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Gyh5FTan7ApyNwcCNy1FGBalgVxf5OxtptZNGEE-VVnQiYaZ~XI1lF4J5HY9V-3nfrx2GGH~KWRz3va6mkRTBlVxHXnkWv-iWPLjGShS9xsUEfq7L-0QcqFTQt2Q65rjD-qf8Kn-3Ki8U9FTyw-PlYsPtIiQPto8mNthz0T5Ubkv5yaLF2yOIvu3MvQ11TT8zH-GulpzJ-7wFF969qfV0nbJlx~LS7lf31N4BO5cIlw61fb6eTS~qhTvIxx8wfXwN5vJkwDbuHLnHgC3fvpdj5BDra-ytf0COYE4VqjOaklpxnWDe2CqxsYpxef7Npa99kV5iwljL1Fp0mhyzKbqKQ__"
+            src="/skip-hop-logo.png"
             alt="Skip Hop"
             className="h-8 lg:h-12"
           />
