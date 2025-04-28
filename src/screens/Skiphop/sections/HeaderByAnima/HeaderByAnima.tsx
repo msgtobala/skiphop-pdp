@@ -38,7 +38,7 @@ export const HeaderByAnima = (): JSX.Element => {
             {navItems.map((item, index) => (
               <NavigationMenuItem key={index} className="flex-shrink-0">
                 <NavigationMenuLink 
-                  className={`relative px-2 xl:px-4 font-medium text-sm xl:text-base tracking-[-0.64px] leading-6 py-2 ${
+                  className={`relative px-2 xl:px-4 font-medium text-sm xl:text-base tracking-[-0.64px] leading-6 py-2 pb-[27px] ${
                     item.isActive 
                       ? 'text-[#ed2d23] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-[#ed2d23]' 
                       : 'text-[#2e2e2e] hover:text-[#ed2d23]'
