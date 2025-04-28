@@ -1,25 +1,67 @@
-import React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "../../../../components/ui/carousel";
+import React, { useRef } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import { Button } from "../../../../components/ui/button";
 import { slides } from "./slides";
 
 export const MomentsSection = (): JSX.Element => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const scrollAmount = container.clientWidth * 0.85; // 85% of container width
+    const currentScroll = container.scrollLeft;
+
+    container.scrollTo({
+      left: currentScroll + (direction === 'left' ? -scrollAmount : scrollAmount),
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <section className="w-full bg-[#F1E6AC] bg-opacity-30">
       <div className="w-full px-4 lg:px-8 2xl:px-[121px] py-12 lg:py-20">
-        <h2 className="text-[#2E2E2E] text-3xl lg:text-5xl font-medium mb-12 lg:mb-20">
-          Made for moments
-        </h2>
+        <div className="flex items-center justify-between mb-12 lg:mb-20">
+          <h2 className="text-[#2E2E2E] text-3xl lg:text-5xl font-medium">
+            Made for moments
+          </h2>
+          <div className="flex items-center gap-4">
+            <Button
+              variant="outline"
+              size="icon"
+              className="bg-[#f0f0f0] rounded-lg hover:bg-[#e0e0e0]"
+              onClick={() => handleScroll('left')}
+            >
+              <ChevronLeftIcon className="h-5 w-5" />
+              <span className="sr-only">Previous</span>
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="bg-[#f0f0f0] rounded-lg hover:bg-[#e0e0e0]"
+              onClick={() => handleScroll('right')}
+            >
+              <ChevronRightIcon className="h-5 w-5" />
+              <span className="sr-only">Next</span>
+            </Button>
+          </div>
+        </div>
 
-        <Carousel className="w-full">
-          <CarouselContent className="-ml-4">
+        <div className="relative overflow-hidden">
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-4 overflow-x-auto scroll-smooth"
+            style={{ 
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
+          >
             {slides.map((slide) => (
-              <CarouselItem 
+              <div 
                 key={slide.id} 
-                className="pl-4 basis-full lg:basis-[85%]"
+                className="pl-4 flex-shrink-0 w-full lg:w-[85%]"
               >
                 <div 
                   className={`relative h-[400px] md:h-[500px] lg:h-[550px] xl:h-[645px] rounded-[20px] overflow-hidden ${slide.backgroundColor} shadow-[0_4px_20px_rgba(0,0,0,0.08)]`}
@@ -53,10 +95,10 @@ export const MomentsSection = (): JSX.Element => {
                     </div>
                   </div>
                 </div>
-              </CarouselItem>
+              </div>
             ))}
-          </CarouselContent>
-        </Carousel>
+          </div>
+        </div>
       </div>
     </section>
   );

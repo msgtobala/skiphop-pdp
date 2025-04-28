@@ -1,10 +1,24 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import React from "react";
+import React, { useRef } from "react";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
-import { ScrollArea, ScrollBar } from "../../../../components/ui/scroll-area";
 
 export const Section1ByAnima = (): JSX.Element => {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (direction: 'left' | 'right') => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const scrollAmount = 488; // Card width (474px) + gap (14px)
+    const currentScroll = container.scrollLeft;
+
+    container.scrollTo({
+      left: currentScroll + (direction === 'left' ? -scrollAmount : scrollAmount),
+      behavior: 'smooth'
+    });
+  };
+
   // Product data for mapping
   const products = [
     {
@@ -50,6 +64,7 @@ export const Section1ByAnima = (): JSX.Element => {
               variant="outline"
               size="icon"
               className="bg-[#f0f0f0] rounded-lg hover:bg-[#e0e0e0]"
+              onClick={() => handleScroll('left')}
             >
               <ChevronLeftIcon className="h-5 w-5" />
               <span className="sr-only">Previous</span>
@@ -58,6 +73,7 @@ export const Section1ByAnima = (): JSX.Element => {
               variant="outline"
               size="icon"
               className="bg-[#f0f0f0] rounded-lg hover:bg-[#e0e0e0]"
+              onClick={() => handleScroll('right')}
             >
               <ChevronRightIcon className="h-5 w-5" />
               <span className="sr-only">Next</span>
@@ -65,8 +81,16 @@ export const Section1ByAnima = (): JSX.Element => {
           </div>
         </div>
 
-        <ScrollArea className="w-full">
-          <div className="flex gap-14 pb-4">
+        <div className="relative overflow-hidden">
+          <div 
+            ref={scrollContainerRef}
+            className="flex gap-14 pb-4 overflow-x-auto scroll-smooth"
+            style={{ 
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
+          >
             {products.map((product) => (
               <Card
                 key={product.id}
@@ -113,8 +137,7 @@ export const Section1ByAnima = (): JSX.Element => {
               </Card>
             ))}
           </div>
-          <ScrollBar orientation="horizontal" />
-        </ScrollArea>
+        </div>
       </div>
     </section>
   );
